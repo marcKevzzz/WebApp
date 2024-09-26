@@ -13,33 +13,29 @@ body {
   overflow: auto;
 }
 
-.containers {
-  padding: 0 1.5vw;
-}
 
 .navbar {
   background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  min-width: 97vw;
-  max-width: 97vw;
+  min-width: 97dvw;
+  max-width: 97dvw;
   margin-top: 10px;
   border-radius: 15px;
   margin-inline: auto;
 }
 
+.contains{
+  display: flex;
+  flex-grow: 1;
+  padding-inline: 4dvw;
+}
+
 .navbar-toggler {
-  border: none;
   transition: all ease 0.2s;
 }
-.navbar-toggler:active,
-.navbar-toggler:focus {
-  box-shadow: none;
-}
+
 .navbar-toggler:hover {
   transform: rotate(180deg);
-}
-.btn-close {
-  border: none;
 }
 .btn-close:hover {
   outline: 0;
@@ -51,32 +47,65 @@ body {
   transition: ease 0.1s;
 }
 
-.nav-link:hover {
-  color: black;
-  font-weight: 500;
+.nav-link{
+  position: relative;
+  transition: all .4s;
+  width: max-content;
 }
 
-.form-control:focus {
-  border-color: #86b7fe;
+.nav-link::after{
+  content: '';
+  position: absolute;
+  background: red;
+  height: 2px;
+  width: 100%;
+  display: block;
+  left: 0;
+  bottom: 4px;
+  opacity: 0;
+  transition: all .2s;
+}
+
+.nav-link:hover::after {
+  color: black;
+  font-weight: 500;
+  opacity: 1;
+}
+.active::before{
+  content: '';
+  background: red;
+  height: 2px;
+  width: 100%;
+  display: block;
+  left: 0;
+  bottom: 4px;
+  position: absolute;
+}
+
+.form-control:focus, .form-control:user-valid {
+  border-color: transparent;
   box-shadow: none;
+  border: none;
+  border-bottom: 1px solid rgb(20, 20, 20);
 }
 
 .form-control {
   height: 30px;
   min-width: 80px;
-  padding-left: 30px;
-  padding-right: 0;
+  padding-left: 25px;
+  border: none;
+  border-bottom: 1px solid rgb(20, 20, 20);
+  background-color: transparent;
+  border-radius: 0;
 }
 
-.d-flex {
+.form{
   position: relative;
-  margin-top: 2.5px;
 }
 
 .searchicon {
   position: absolute;
-  margin-top: 2px;
-  left: 32px;
+  left: 2px;
 }
 
 .main {
@@ -84,54 +113,54 @@ body {
   padding-inline: 3vw;
   display: flex;
   gap: 0;
-  position: relative;
-  padding-top: 7vh;
+  padding-top: 7dvh;
 }
 
-img {
-  object-fit: fill;
-  height: 70vh;
-  position: absolute;
-  right: -5%;
-  top: -5%;
+.containers{
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  flex-wrap: wrap-reverse;
+  padding-left: 5dvh;
+}
+
+.hero {
+  flex-grow: 1;
+  object-fit: contain;
+  min-width: 300px;
+  max-width: 38vw;
+  margin-right: 2dvw;
+  background-position: center;
+  transition: all ease .2s;
+}
+
+.hero:hover{
+  filter: drop-shadow(30px 10px 7px rgb(201, 202, 202));
+  transform: translateX(-3ch);
 }
 
 .homepage {
-  width: 50%;
+  margin-top: 50px;
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-.title_g {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: -30px;
-}
-
 .title_main {
-  font-size: 6vw;
-  font-weight: 500;
-  letter-spacing: -5px;
+  font-size: 80px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 10dvh;
 }
 
 .parag1 {
-  width: 95%;
+  max-width: 95%;
   padding-left: 5px;
 }
 
-.homepage .btn {
+.homepage .go-btn {
   max-width: fit-content;
-}
-
-.cool_thing h1 {
-  margin-top: 10vh;
-  font-weight: 800;
-  font-size: 30px;
-}
-
-.text-nowrap {
-  position: sticky;
-  right: 0;
+  margin-left: 5px;
 }
 
 .drop-in {
@@ -142,13 +171,18 @@ img {
   animation: drop-in 1200ms ease 500ms backwards;
 }
 
+.dissolve{
+  animation: dissolve 1s ease 500ms backwards;
+}
+
 /* For quiz page */
+
 
 .main1 {
   font-family: Arial, sans-serif;
   display: flex;
-  min-height: 85vh;
-  max-height: 100vh;
+  min-height: 85dvh;
+  max-height: 100dvh;
   margin-top: 80px;
   min-width: 97vw;
   margin-inline: auto;
@@ -241,8 +275,13 @@ img {
   opacity: 1;
 }
 
-.progress {
-  height: 30px;
+@keyframes dissolve {
+  from {
+    opacity: 0;
+  }
+  t0{
+    opacity: 1;
+  }
 }
 
 @keyframes drop-in {
@@ -255,10 +294,94 @@ img {
     transform: translateY(0px);
   }
 }
+@media screen and (max-width: 990px) {
+  .containers{
+    padding: 0;
+    justify-content: center;
+  }
 
-@media screen and (max-width: 360px) {
-  .form-control,
-  .searchicon {
+  .login-btn{
+    margin-top: 20px;
+  }
+  
+}
+
+@media screen and (max-width: 630px) {
+  .nav-menu{
+    width: fit-content;
+  }
+
+.login-btn{
+  margin-top: 10px;
+  display: flex;
+  justify-items: center;
+}
+
+
+.title_main{
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 50px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.parag1{
+  text-align: center;
+}
+
+.homepage .go-btn{
+  padding: 5px 8px;
+  font-size: 15px;
+  margin-left: 20px;
+  
+}
+
+}
+
+@media screen and (max-width: 380px) {
+  .navbar-brand{
+    font-size: 18px;
+    margin-left: 15px;
+    margin-right: 0;
+  }
+
+  .form-control{
+  display: none;
+  }
+
+  .searchicon{
+    position: static;
+    padding: 2px 6px 3px 6px;
+    margin: 0;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all ease .1s;
+  }
+
+  .searchicon:hover, .searchicon:active{
+    transform: rotate(90deg);
+  }
+  
+  .navbar-brand .span{
     display: none;
   }
+
+
+  .title_main{
+    font-size: 33px;
+    letter-spacing: normal;
+    line-height: 35px;
+    font-weight: 600;
+    padding: 0;
+  }
+
+  .homepage .go-btn{
+    padding: 5px 8px;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  
 }

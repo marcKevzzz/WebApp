@@ -18,40 +18,16 @@
     />
     <link rel="stylesheet" href="./style.css" />
   </head>
+
   <body>
-    <nav class="navbar fixed-top">
-      <div class="container flex-nowrap">
-        <a href="" class="navbar-brand drop-in"
-          >Pron Site | <span class="fs-5">Career</span></a
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="contains dissolve">
+        <a href="" class="navbar-brand"
+          >Pron Site <span class="navbar-brand span">| Career</span></a
         >
-        <div class="d-flex gap-2 drop-in">
-          <form class="d-flex" role="search">
-            <span class="searchicon"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-search"
-              >
-                <circle cx="11" cy="11" r="8" />
-                <path d="m21 21-4.3-4.3" /></svg
-            ></span>
-            <input
-              class="form-control ms-4"
-              type="search"
-              placeholder="search..."
-              aria-label="Search"
-            />
-          </form>
-          <button class="btn btn-danger ms-5 me-3">Login/Registar</button>
+        <div class="d-flex nav-menu flex-grow-1 justify-content-end">
           <button
-            class="navbar-toggler"
+            class="navbar-toggler shadow-none border-0"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasNavbar"
@@ -75,7 +51,7 @@
             ></span>
           </button>
           <div
-            class="offcanvas offcanvas-end"
+            class="sidebar offcanvas offcanvas-end"
             tabindex="-1"
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"
@@ -86,14 +62,16 @@
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                class="btn-close shadow-none border-0"
                 data-bs-dismiss="offcanvas"
                 aria-label="Close"
               ></button>
             </div>
             <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
+              <ul
+                class="navbar-nav flex-grow-1 justify-content-center"
+              >
+                <li class="nav-item mx-2">
                   <a
                     class="nav-link active"
                     aria-current="page"
@@ -101,40 +79,45 @@
                     >Home</a
                   >
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mx-2">
                   <a class="nav-link" href="./quiz.html">Path Finder</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mx-2">
                   <a class="nav-link" href="#">Blog</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mx-2">
                   <a class="nav-link" href="#">About</a>
                 </li>
               </ul>
+              <div class="d-flex ">
+              <button class="btn btn-danger login-btn">
+                Login / Register
+              </button>
+            </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
 
-    <main class="main drop-in2">
-      <div class="homepage">
-        <div class="title_g">
-          <h1 class="title_main me-3">Discover Your</h1>
-          <h1 class="title_main text-danger">Path</h1>
-        </div>
-        <div class="title_g mb-2">
-          <h1 class="title_main me-3 text-danger">Enganging</h1>
-          <h1 class="title_main">Quizzes</h1>
-        </div>
+    <main class="main">
+      <div class="containers d-flex">
+        <div class="homepage text-wrap drop-in">
+          <div class="title_main mb-3">
+            Discover Your
+            <span class="text-danger"> Path </span>
+            <span class="text-danger">Enganging</span>
+            Quizzes
+          </div>
 
-        <p class="parag1">
-          Get students excited while you test their knowledge. Race across
-          custom maps and theme them to any subject!
-        </p>
-        <button class="btn btn-danger ms-1">Get Started →</button>
+          <p class="parag1">
+            Get students excited while you test their knowledge. Race across
+            custom maps and theme them to any subject!
+          </p>
+          <button class="btn btn-danger go-btn">Get Started →</button>
+        </div>
+        <img class="hero drop-in2" src="./graphic2.png" alt="" />
       </div>
-      <img src="./graphic_homepage.png" alt="" />
     </main>
 
     <script
