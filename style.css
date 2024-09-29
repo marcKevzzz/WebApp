@@ -22,12 +22,16 @@ body {
   margin-top: 10px;
   border-radius: 15px;
   margin-inline: auto;
+  position: sticky;
+  top: 10px;
+  z-index: 99999;
 }
 
 .contains{
   display: flex;
   flex-grow: 1;
   padding-inline: 4dvw;
+  padding-block: .5em;
 }
 
 .navbar-toggler {
@@ -48,38 +52,41 @@ body {
 }
 
 .nav-link{
+  font-size: 18px;
   position: relative;
   transition: all .4s;
   width: max-content;
+  font-weight: 500;
+  color: black;
 }
 
 .nav-link::after{
   content: '';
   position: absolute;
-  background: red;
-  height: 2px;
+  background: rgb(0, 0, 0);
+  height: .151rem;
   width: 100%;
   display: block;
   left: 0;
   bottom: 4px;
   opacity: 0;
   transition: all .2s;
+  border-radius: 5px;
 }
 
 .nav-link:hover::after {
-  color: black;
-  font-weight: 500;
   opacity: 1;
 }
 .active::before{
   content: '';
-  background: red;
-  height: 2px;
+  background: rgb(0, 0, 0);
+  height: .151rem;
   width: 100%;
   display: block;
   left: 0;
   bottom: 4px;
   position: absolute;
+  border-radius: 5px;
 }
 
 .form-control:focus, .form-control:user-valid {
@@ -109,19 +116,19 @@ body {
 }
 
 .main {
-  margin-top: 100px;
   padding-inline: 3vw;
-  display: flex;
   gap: 0;
-  padding-top: 7dvh;
+
 }
 
 .containers{
+  padding-top: 15dvh;
   justify-content: space-between;
   gap: 10px;
   width: 100%;
   flex-wrap: wrap-reverse;
-  padding-left: 5dvh;
+  padding-left: 2.4dvw;
+  height: 100dvh;
 }
 
 .hero {
@@ -130,8 +137,11 @@ body {
   min-width: 300px;
   max-width: 38vw;
   margin-right: 2dvw;
+  margin-top: 5dvh;
   background-position: center;
   transition: all ease .2s;
+  height: 400px;
+  align-self: self-start;
 }
 
 .hero:hover{
@@ -144,23 +154,33 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  max-width: 800px;
 }
 
 .title_main {
-  font-size: 80px;
+  font-size: 90px;
   font-weight: 800;
   letter-spacing: -1px;
-  line-height: 10dvh;
+  line-height: 95px;
+  margin-bottom: 25px;
 }
 
 .parag1 {
-  max-width: 95%;
+  max-width: 90%;
   padding-left: 5px;
+  font-size: 20px;
+  margin-bottom: 35px;
 }
 
 .homepage .go-btn {
   max-width: fit-content;
   margin-left: 5px;
+}
+
+.title2{
+  font-weight: 400;
+  font-family: "Coiny", system-ui;
+  font-size: 60px;
 }
 
 .drop-in {
@@ -172,7 +192,7 @@ body {
 }
 
 .dissolve{
-  animation: dissolve 1s ease 500ms backwards;
+  animation: dissolve .6s ease 700ms backwards;
 }
 
 /* For quiz page */
@@ -187,6 +207,7 @@ body {
   min-width: 97vw;
   margin-inline: auto;
   gap: 1.5vw;
+  flex-wrap: wrap;
 }
 
 .quiz-container {
@@ -198,9 +219,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  flex: 1;
+  flex-grow: 1;
   padding: 2% 3% 0;
-  min-width: 60vw;
   transition: opacity 0.3s ease;
 }
 
@@ -259,8 +279,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  flex: 1;
+  flex-grow: 1;
   padding: 2% 5% 0;
+  height: 80dvh;
 }
 
 #quiz-container {
@@ -303,6 +324,20 @@ body {
   .login-btn{
     margin-top: 20px;
   }
+
+  .homepage{
+    width: auto;
+  }
+
+  .title_main{
+    font-size: 60px;
+    line-height: 70px;
+  }
+
+  .parag1{
+    
+    max-width: 100%;
+  }
   
 }
 
@@ -334,8 +369,8 @@ body {
 .homepage .go-btn{
   padding: 5px 8px;
   font-size: 15px;
-  margin-left: 20px;
-  
+  margin-left: auto;
+  margin-right: 10px;
 }
 
 }
@@ -369,6 +404,9 @@ body {
     display: none;
   }
 
+  .parag1{
+    font-size: 15px;
+  }
 
   .title_main{
     font-size: 33px;
@@ -379,9 +417,19 @@ body {
   }
 
   .homepage .go-btn{
-    padding: 5px 8px;
+    padding: 5px 15px;
     font-size: 13px;
-    margin-left: 10px;
+    margin-right: 15px;
   }
   
+}
+
+@media screen and (min-width: 370px ) and (max-width: 380px) {
+  .title_main{
+    margin-bottom: 15px;
+  }
+  .parag1{
+    padding-inline: 20px;
+    margin-bottom: 15px;
+  }
 }

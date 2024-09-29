@@ -16,15 +16,17 @@
       href="https://fonts.googleapis.com/css2?family=Questrial&display=swap"
       rel="stylesheet"
     />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Coiny&display=swap");
+    </style>
     <link rel="stylesheet" href="./style.css" />
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg">
       <div class="contains dissolve">
-        <a href="" class="navbar-brand"
-          >Pron Site <span class="navbar-brand span">| Career</span></a
-        >
+        <a href="./index.html" class="navbar-brand"><img src="Logo.png" alt="PathFit" height="28px" ></a>
+        
         <div class="d-flex nav-menu flex-grow-1 justify-content-end">
           <button
             class="navbar-toggler shadow-none border-0"
@@ -68,14 +70,12 @@
               ></button>
             </div>
             <div class="offcanvas-body">
-              <ul
-                class="navbar-nav flex-grow-1 justify-content-center"
-              >
+              <ul class="navbar-nav flex-grow-1 justify-content-center">
                 <li class="nav-item mx-2">
                   <a
                     class="nav-link active"
                     aria-current="page"
-                    href="./index.html"
+                    href="#homepage-section"
                     >Home</a
                   >
                 </li>
@@ -89,11 +89,11 @@
                   <a class="nav-link" href="#">About</a>
                 </li>
               </ul>
-              <div class="d-flex ">
-              <button class="btn btn-danger login-btn">
-                Login / Register
-              </button>
-            </div>
+              <div class="d-flex">
+                <button class="btn btn-primary login-btn">
+                  Login / Register
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -101,22 +101,44 @@
     </nav>
 
     <main class="main">
-      <div class="containers d-flex">
+      <div class="containers d-flex" id="homepage-section">
         <div class="homepage text-wrap drop-in">
-          <div class="title_main mb-3">
-            Discover Your
-            <span class="text-danger"> Path </span>
-            <span class="text-danger">Enganging</span>
-            Quizzes
+          <div class="title_main">
+            Find the
+            <span class="text-info"> Right Path </span>
+
+            for Your Future!
           </div>
 
           <p class="parag1">
-            Get students excited while you test their knowledge. Race across
-            custom maps and theme them to any subject!
+            Take the test to discover which Senior High School Strand suits your
+            <span class="text-dark fw-semibold bg-info p-1 rounded"
+              >skills</span
+            >
+            and
+            <span class="text-dark fw-semibold bg-info p-1 rounded"
+              >interests</span
+            >.
           </p>
-          <button class="btn btn-danger go-btn">Get Started →</button>
+          <button class="btn btn-primary go-btn">Get Started →</button>
         </div>
         <img class="hero drop-in2" src="./graphic2.png" alt="" />
+      </div>
+      <div class="container">
+        <center>
+          <font size="7" class="text-dark title2 drop-in">Why We're Here</font>
+        </center>
+        <br />
+        <p class="text-center fs-5 drop-in2">
+          I did my best But I guess my best wasn't good enough Cause here we are
+          Back where we were before Seems nothin' ever changes We're back to
+          being strangers Wondering if we ought to stay Or head on out the door
+          Just once Can we figure out what we keep doin' wrong? Why we never
+          last for very long What are we doin' wrong? Just once Can we find a
+          way to finally make it right? To make the magic last for more than
+          just one night? If we could just get to it I know we could break
+          through it
+        </p>
       </div>
     </main>
 
