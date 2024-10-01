@@ -57,13 +57,13 @@ body {
   transition: all .4s;
   width: max-content;
   font-weight: 500;
-  color: black;
+  color: rgba(0, 0, 0, 0.384);
 }
 
 .nav-link::after{
   content: '';
   position: absolute;
-  background: rgb(0, 0, 0);
+  background: rgba(0, 81, 255, 0.7);
   height: .151rem;
   width: 100%;
   display: block;
@@ -79,7 +79,7 @@ body {
 }
 .active::before{
   content: '';
-  background: rgb(0, 0, 0);
+  background: rgba(0, 81, 255, 0.7);
   height: .151rem;
   width: 100%;
   display: block;
@@ -124,15 +124,13 @@ body {
 .containers{
   padding-top: 15dvh;
   justify-content: space-between;
-  gap: 10px;
   width: 100%;
   flex-wrap: wrap-reverse;
-  padding-left: 2.4dvw;
-  height: 100dvh;
+  padding-inline: 5dvw;
+  height: 90dvh;
 }
 
 .hero {
-  flex-grow: 1;
   object-fit: contain;
   min-width: 300px;
   max-width: 38vw;
@@ -146,7 +144,7 @@ body {
 
 .hero:hover{
   filter: drop-shadow(30px 10px 7px rgb(201, 202, 202));
-  transform: translateX(-3ch);
+  transform: translate(-3ch, -3ch);
 }
 
 .homepage {
@@ -177,10 +175,43 @@ body {
   margin-left: 5px;
 }
 
-.title2{
-  font-weight: 400;
-  font-family: "Coiny", system-ui;
-  font-size: 60px;
+#section2{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vw;
+  padding-inline: 5vw;
+}
+
+.t2{
+  font-size: 80px;
+}
+
+ .parag2{
+  font-size: 20px;
+  text-indent: calc(2vw + 10px);
+}
+
+.s2{
+  flex: 1 1 40vw;
+  min-height: 50vh;
+}
+
+.teenimg{
+  flex: 1 1 40vw;
+  min-width: 5em;
+  max-width: 45em;
+  margin-inline: auto;
+  object-fit: contain;
+  image-rendering: optimizeQuality;
+  object-position: center top;
+  height: 22em;
+  margin-bottom: 1em;
+}
+
+
+
+.t3{
+  font-size: 50px;
 }
 
 .drop-in {
@@ -194,6 +225,8 @@ body {
 .dissolve{
   animation: dissolve .6s ease 700ms backwards;
 }
+
+
 
 /* For quiz page */
 
@@ -317,8 +350,14 @@ body {
 }
 @media screen and (max-width: 990px) {
   .containers{
-    padding: 0;
+    padding-top: 0;
     justify-content: center;
+    height: auto;
+    margin-bottom: 20vh;
+  }
+
+  .hero{
+    margin: 0;
   }
 
   .login-btn{
@@ -337,6 +376,10 @@ body {
   .parag1{
     
     max-width: 100%;
+  }
+
+  #s3{
+    margin-top: 5em;
   }
   
 }
@@ -361,17 +404,25 @@ body {
   text-align: center;
   padding: 0 20px;
 }
-
 .parag1{
   text-align: center;
 }
+.homepage{
+  margin-top: 0;
+}
 
 .homepage .go-btn{
-  padding: 5px 8px;
+  padding: 7px 8px;
   font-size: 15px;
-  margin-left: auto;
-  margin-right: 10px;
+  max-width: 100%;
+  margin-inline: 5vw;
+  
 }
+
+.teenimg{
+  height: auto;
+}
+
 
 }
 
@@ -403,6 +454,16 @@ body {
   .navbar-brand .span{
     display: none;
   }
+  .containers{
+    margin-top: 10vh;
+  }
+  .hero{
+    height: 120px;
+  }
+
+  .homepage{
+    margin-top: 10%;
+  }
 
   .parag1{
     font-size: 15px;
@@ -417,9 +478,17 @@ body {
   }
 
   .homepage .go-btn{
-    padding: 5px 15px;
+    padding: 6px 15px;
     font-size: 13px;
-    margin-right: 15px;
+  }
+
+
+  .parag2{
+    font-size: 15px;
+  }
+
+  #s3{
+    margin-top: 0;
   }
   
 }
