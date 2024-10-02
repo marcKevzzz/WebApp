@@ -16,6 +16,9 @@
       href="https://fonts.googleapis.com/css2?family=Questrial&display=swap"
       rel="stylesheet"
     />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Coiny&display=swap");
+    </style>
     <link rel="stylesheet" href="./style.css" />
     <script src="./script.js" defer></script>
 
@@ -29,40 +32,17 @@
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body>
-    <nav class="navbar fixed-top">
-      <div class="container flex-nowrap">
-        <a href="" class="navbar-brand drop-in"
-          >Pron Site | <span class="fs-5">Career</span></a
-        >
-        <div class="d-flex gap-2 drop-in">
-          <form class="d-flex" role="search">
-            <span class="searchicon"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-search"
-              >
-                <circle cx="11" cy="11" r="8" />
-                <path d="m21 21-4.3-4.3" /></svg
-            ></span>
-            <input
-              class="form-control ms-4"
-              type="search"
-              placeholder="search..."
-              aria-label="Search"
-            />
-          </form>
-          <button class="btn btn-danger ms-5 me-3">Login/Registar</button>
+    <nav class="navbar navbar-expand-lg">
+      <div class="contains dissolve">
+        <a href="./index.html" class="navbar-brand"
+          ><img src="./imgs/Logo.png" alt="PathFit" height="28px"
+        /></a>
+
+        <div class="d-flex nav-menu flex-grow-1 justify-content-end">
           <button
-            class="navbar-toggler"
+            class="navbar-toggler shadow-none border-0"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasNavbar"
@@ -86,7 +66,7 @@
             ></span>
           </button>
           <div
-            class="offcanvas offcanvas-end"
+            class="sidebar offcanvas offcanvas-end"
             tabindex="-1"
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"
@@ -97,31 +77,36 @@
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                class="btn-close shadow-none border-0"
                 data-bs-dismiss="offcanvas"
                 aria-label="Close"
               ></button>
             </div>
             <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
+              <ul class="navbar-nav flex-grow-1 justify-content-center">
+                <li class="nav-item mx-2">
                   <a
                     class="nav-link active"
                     aria-current="page"
-                    href="./homepage.html"
+                    href="#homepage-section"
                     >Home</a
                   >
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mx-2">
                   <a class="nav-link" href="./quiz.html">Path Finder</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Blog</a>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="./blog.html">Blog</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mx-2">
                   <a class="nav-link" href="#">About</a>
                 </li>
               </ul>
+              <div class="d-flex">
+                <button class="btn btn-primary login-btn">
+                  Login / Register
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -133,29 +118,28 @@
         <div class="homepage text-wrap drop-in">
           <div class="title_main">
             Find the
-            <span class="text-info"> Right Path </span>
+            <span class="text-primary"> Right Path </span>
 
             for Your Future!
           </div>
 
           <p class="parag1">
-            Take the test to discover which Senior High School Strand suits your
-            <span class="text-dark fw-semibold bg-info p-1 rounded"
-              >skills</span
-            >
+            Find out which Senior High School Strand matches your
+            <span class="parag-hover">skills</span>
             and
-            <span class="text-dark fw-semibold bg-info p-1 rounded"
-              >interests</span
-            >.
+            <span class="parag-hover">interests</span> by taking the test. Start
+            now to uncover the path best suited for you! Your
+            <span class="parag-hover">future</span> starts with making the right
+            choice today.
           </p>
           <button class="btn btn-primary go-btn">Get Started →</button>
         </div>
         <img class="hero drop-in2" src="./imgs/graphic2.png" alt="" />
       </div>
-      <div  id="section2">
-        <img class="teenimg" src="./imgs/teen.jpeg" alt="" />
+      <div id="section2">
+        <img class="teenimg dissolve" src="./imgs/teen.jpeg" alt="" />
         <div class="s2">
-          <div class="title_main t2 drop-in">Why We're Here</div>
+          <div class="title_main t-dark t2 drop-in">Why We're Here</div>
           <br />
           <p class="parag2 drop-in2">
             I did my best But I guess my best wasn't good enough Cause here we
@@ -168,17 +152,125 @@
             break through it
           </p>
         </div>
-
-        <p class="parag1">
-          Get students excited while you test their knowledge. Race across
-          custom maps and theme them to any subject!
-        </p>
-        <button class="btn btn-danger ms-1">Get Started →</button>
       </div>
-      <div id="s3">
-        <center class="title_main t3">
+      <div id="section3">
+        <center class="title_main t-dark t3 dissolve">
           A Quick Look at Senior High School Career Tracks
         </center>
+        <div class="banner-list">
+          <span
+            class="banner bannerAnim"
+            style="--i: 0"
+            onclick="bannerAppear(this)"
+          >
+            <span class="img">
+              <img src="./imgs/banner/red.png" alt="" />
+              <span class="banner-text">Abm</span>
+            </span>
+            <div class="banner-cont red">
+              The Accountancy, Business and Management (ABM) strand is an
+              introductory course that teaches students the basic concepts of
+              financial management, business management, corporate operations,
+              human resource, and office management. This strand prepares
+              students to become business leaders, entrepreneurs, financial
+              managers, and accountants. It also provides a wide range of career
+              opportunities such as accountant, auditor, financial analyst,
+              investment banker, marketing manager, and more.
+            </div>
+          </span>
+
+          <span
+            class="banner bannerAnim"
+            style="--i: 1"
+            onclick="bannerAppear(this)"
+          >
+            <span class="img">
+              <img src="./imgs/banner/yellow.png" alt="" />
+              <span class="banner-text">Stem</span>
+            </span>
+            <div class="banner-cont yellow">
+              Science, Technology, Engineering, and Mathematics (STEM) will
+              nurture students’ ability to gauge from simple to complex problems
+              of the society and how these learners are responsive and active in
+              designing its solutions through researches as to apply and
+              integrate scientific, technological, engineering, and mathematical
+              ideas. STEM strands will also prepare learners for college degrees
+              that focus on the perplexity of the intrinsic world making them
+              the future scientists, experts in technological advancement,
+              engineers, mathematicians and so on.
+            </div>
+          </span>
+
+          <span
+            class="banner bannerAnim"
+            style="--i: 2"
+            onclick="bannerAppear(this)"
+          >
+            <span class="img">
+              <img src="./imgs/banner/orange.png" alt="" />
+              <span class="banner-text">Humms</span>
+            </span>
+            <div class="banner-cont orange">
+              The Humanities and Social Sciences (HUMSS) strands equip students
+              with a wide range of discipline with the use of their experiences
+              and skills into the investigation and inquiry of human situations
+              by studying its behavior and social changes using empirical,
+              analytical, and critical method techniques. HUMSS will give every
+              learner a deeper understanding of culture, politics, literature,
+              arts, and society - how these factors' complexity is appreciated
+              during the pressing issues concerning them.
+            </div>
+          </span>
+
+          <span
+            class="banner bannerAnim"
+            style="--i: 3"
+            onclick="bannerAppear(this)"
+          >
+            <span class="img">
+              <img src="./imgs/banner/green.png" alt="" />
+              <span class="banner-text">Gas</span>
+            </span>
+            <div class="banner-cont green">
+              General Academic Strand caters to students who are not yet sure of
+              what course or degree they want to take in college. This strand
+              was designed so that indecisive learners can proceed with any
+              college program. Though, learners under this strand will take/may
+              not take bridging programs (depending on the school) for the
+              subjects not taken during Senior High.
+            </div>
+          </span>
+
+          <span
+            class="banner bannerAnim"
+            style="--i: 4"
+            onclick="bannerAppear(this)"
+          >
+            <span class="img">
+              <img src="./imgs/banner/blue.png" alt="" />
+              <span class="banner-text">Ict</span>
+            </span>
+            <div class="banner-cont blue">Architecto maiores nulla itaque.</div>
+          </span>
+          <span
+            class="banner bannerAnim"
+            style="--i: 5"
+            onclick="bannerAppear(this)"
+          >
+            <span class="img">
+              <img src="./imgs/banner/pink.png" alt="" />
+              <span class="banner-text">He</span>
+            </span>
+            <div class="banner-cont pink">
+              The TVL (Technical-Vocational-Livelihood) strand in the Philippine
+              Senior High School program equips students with practical skills
+              for immediate employment or further vocational education. It
+              offers specialized training in areas like Information Technology,
+              Home Economics, Industrial Arts, and Agri-Fishery, providing
+              hands-on experience for careers in these fields.
+            </div>
+          </span>
+        </div>
       </div>
     </main>
     <footer>
