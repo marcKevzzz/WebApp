@@ -189,4 +189,5 @@ document.addEventListener("DOMContentLoaded", () => {
         };
     
         updateQuiz();
+
     });
