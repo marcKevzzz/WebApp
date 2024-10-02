@@ -118,7 +118,6 @@ body {
 .main {
   padding-inline: 3vw;
   gap: 0;
-
 }
 
 .containers{
@@ -226,10 +225,7 @@ body {
   animation: dissolve .6s ease 700ms backwards;
 }
 
-
-
 /* For quiz page */
-
 
 .main1 {
   font-family: Arial, sans-serif;
@@ -490,7 +486,6 @@ body {
   #s3{
     margin-top: 0;
   }
-  
 }
 
 @media screen and (min-width: 370px ) and (max-width: 380px) {
