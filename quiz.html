@@ -28,7 +28,7 @@
     ></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg sticky-top">
       <div class="contains dissolve">
         <a href="./index.html" class="navbar-brand"
           ><img src="./imgs/Logo.png" alt="PathFit" height="28px"
@@ -66,9 +66,7 @@
             aria-labelledby="offcanvasNavbarLabel"
           >
             <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-                Offcanvas
-              </h5>
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">PathFit</h5>
               <button
                 type="button"
                 class="btn-close shadow-none border-0"
@@ -81,8 +79,13 @@
                 <li class="nav-item mx-2">
                   <a class="nav-link" href="./index.html">Home</a>
                 </li>
-                <li class="nav-item mx-2" aria-current="page">
-                  <a class="nav-link active" href="./quiz.html">Path Finder</a>
+                <li class="nav-item mx-2">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="./quiz.html"
+                    >Path Finder</a
+                  >
                 </li>
                 <li class="nav-item mx-2">
                   <a class="nav-link" href="./blog.html">Blog</a>
@@ -91,10 +94,10 @@
                   <a class="nav-link" href="#">About</a>
                 </li>
               </ul>
-              <div class="d-flex">
-                <button class="btn btn-primary login-btn">
-                  Login / Register
-                </button>
+              <div class="login-btn">
+                <a class="go-btn"
+                  ><span class="btn-text"> Login / Register</span>
+                </a>
               </div>
             </div>
           </div>
@@ -157,6 +160,5 @@
       </div>
     </div>
     <script src="./quiz.js"></script>
-    
   </body>
 </html>

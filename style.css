@@ -3,6 +3,7 @@
   font-family: "Questrial", sans-serif;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -12,11 +13,10 @@ body {
 
 .quiz_body {
   overflow: auto;
- 
 }
 
-
 .navbar {
+  position: sticky;
   background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   min-width: 97dvw;
@@ -24,7 +24,6 @@ body {
   margin-top: 10px;
   border-radius: 15px;
   margin-inline: auto;
-  position: sticky;
   top: 10px;
   z-index: 99999;
 }
@@ -91,31 +90,10 @@ body {
   border-radius: 5px;
 }
 
-.form-control:focus,
-.form-control:user-valid {
-  border-color: transparent;
-  box-shadow: none;
-  border: none;
-  border-bottom: 1px solid rgb(20, 20, 20);
-}
-
-.form-control {
-  height: 30px;
-  min-width: 80px;
-  padding-left: 25px;
-  border: none;
-  border-bottom: 1px solid rgb(20, 20, 20);
-  background-color: transparent;
-  border-radius: 0;
-}
-
-.form {
-  position: relative;
-}
-
-.searchicon {
-  position: absolute;
-  left: 2px;
+.login-btn {
+  width: 155px;
+  display: flex;
+  justify-content: baseline;
 }
 
 .main {
@@ -126,13 +104,13 @@ body {
 /* Section 1 of homepage */
 
 .containers {
-  padding-top: 10dvh;
   align-items: self-start;
   justify-content: space-between;
   width: 100%;
   flex-wrap: wrap-reverse;
   padding-inline: 5dvw;
   height: 90dvh;
+  margin-bottom: 5em;
 }
 
 .hero {
@@ -168,6 +146,10 @@ body {
   margin-bottom: 25px;
 }
 
+.home-text {
+  color: rgb(76, 76, 241);
+}
+
 .parag1 {
   max-width: 90%;
   padding-left: 5px;
@@ -198,9 +180,48 @@ body {
   color: white;
 }
 
-.homepage .go-btn {
+.go-btn {
   max-width: fit-content;
   margin-left: 5px;
+  position: relative;
+  padding: 2px 8px 12px 14px;
+  border-radius: 7px;
+  border: 2px solid black;
+  background: rgb(78, 78, 255);
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 1;
+  float: right;
+}
+
+.go-btn .btn-text {
+  color: black;
+}
+
+.go-btn::after {
+  content: "";
+  height: 110%;
+  width: 103%;
+  border-radius: 7px;
+  border: 2px solid black;
+  position: absolute;
+  background: white;
+  bottom: 2px;
+  left: 2px;
+  z-index: -1;
+}
+
+.go-btn:hover:after {
+  background-color: rgb(227, 230, 247);
+}
+
+.go-btn:active:after {
+  bottom: 0;
+  left: 0;
+}
+
+.go-btn:active .btn-text {
+  font-size: 14px;
 }
 
 /* Section 2 of homepage */
@@ -210,19 +231,22 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 2vw;
-  padding-inline: 5vw;
+  padding-inline: 2.5vw;
   background: #f1f5fd;
-  padding-top: 7vh;
+  padding-block: 7vh;
   margin-bottom: 10vh;
+  align-items: center;
 }
 
 .t2 {
-  font-size: 80px;
+  font-size: 60px;
+  margin-bottom: 0;
 }
 
 .parag2 {
   font-size: 20px;
   text-indent: calc(2vw + 10px);
+  margin-top: 0;
 }
 
 .s2 {
@@ -231,51 +255,61 @@ body {
 }
 
 .teenimg {
-  flex: 1 1 40vw;
-  min-width: 15em;
-  max-width: 45em;
+  flex: 1 1 30vw;
+  min-width: 20em;
   margin-inline: auto;
   object-fit: contain;
   object-position: top;
-  height: 22em;
+  min-height: 8em;
   margin-bottom: 1em;
 }
 
 /* Section 3 of homepage */
+#section3 {
+  margin-bottom: 8em;
+}
 
-#section3 .banner-list{
+#section3 .banner-list {
   display: flex;
+
   flex-wrap: wrap;
   min-height: 60vh;
   justify-content: center;
+  margin-bottom: 2em;
 }
 .t3 {
   font-size: 50px;
   margin-bottom: 10vh;
 }
-.banner .img{
+.banner .img {
   position: relative;
   z-index: -1;
-  width: 280px;
 }
 
-.banner-list .banner{
+.img img {
+  height: 250px;
+}
+
+.banner-list .banner {
   max-width: 90vw;
   height: fit-content;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 10px;
   align-items: center;
-  
-  animation: bannerAnim 0.3s ease backwards;
+  animation: bannerAnim 0.5s ease backwards;
   animation-delay: calc(0.1s * var(--i));
+  margin-bottom: 2em;
 }
 
 .banner .banner-cont {
+  flex: 1 1 65vw;
   padding: 4em;
-  min-height: 330px;
-  font-size: 30px;
-  display: none; 
-  width: 80vw;
+  min-height: 200px;
+  font-size: 22px;
+  display: none;
   border: 2px solid black;
   border-radius: 13px;
   position: relative;
@@ -298,30 +332,30 @@ body {
 }
 
 .banner.active .banner-cont {
-  display: block; 
+  display: block;
 }
 
-.red{
+.red {
   background: rgb(143, 76, 76);
 }
-.yellow{
+.yellow {
   background: rgb(183, 183, 27);
 }
-.orange{
+.orange {
   background-color: rgb(184, 132, 36);
 }
-.green{
+.green {
   background: #10874e;
 }
-.blue{
+.blue {
   background-color: rgb(79, 123, 167);
 }
 
-.pink{
+.pink {
   background-color: rgb(166, 107, 135);
 }
 
-.banner .banner-text{
+.banner .banner-text {
   position: absolute;
   top: 40%;
   left: 53%;
@@ -334,6 +368,57 @@ body {
   width: fit-content;
 }
 
+.quotes {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.quotes h1 {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  min-width: 30vw;
+  animation: bannerAnim 0.5s ease backwards;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+/* Footer */
+.footer {
+  background: black;
+  padding: 1em;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo {
+  filter: invert();
+  margin-bottom: 1em;
+}
+
+.footer-title {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.footer ul {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  padding: 0;
+  padding-right: 20px;
+}
+
+.footer li {
+  text-decoration: none;
+}
+
+.footer li a i {
+  color: white;
+}
 
 /* Animations when load */
 .drop-in {
@@ -348,9 +433,8 @@ body {
   animation: dissolve 0.7s ease 500ms backwards;
 }
 
-
 /* For quiz page */
-.contain{
+.contain {
   padding: 1.8rem;
 }
 .main1 {
@@ -526,6 +610,9 @@ body {
   .teenimg {
     height: auto;
   }
+  .banner .banner-cont {
+    font-size: 16px;
+  }
 }
 
 /* Screen for small phone */
@@ -628,12 +715,12 @@ body {
     transform: translateY(0px);
   }
 }
-@keyframes bannerAnim{
-  from{
+@keyframes bannerAnim {
+  from {
     opacity: 0;
     transform: translateY(50px);
   }
-  to{
+  to {
     opacity: 1;
     transform: translateY(0);
   }

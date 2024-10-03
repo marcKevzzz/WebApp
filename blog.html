@@ -28,14 +28,13 @@
       crossorigin="anonymous"
     ></script>
     <style>
-
-      .title{
+      .title {
         display: flex;
         align-items: center;
         gap: 30px;
         margin-bottom: 30px;
       }
-      img {
+      .title img {
         max-width: 50px;
         border-radius: 50%;
         background: lightblue;
@@ -88,9 +87,7 @@
             aria-labelledby="offcanvasNavbarLabel"
           >
             <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-                Offcanvas
-              </h5>
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">PathFit</h5>
               <button
                 type="button"
                 class="btn-close shadow-none border-0"
@@ -103,20 +100,25 @@
                 <li class="nav-item mx-2">
                   <a class="nav-link" href="./index.html">Home</a>
                 </li>
-                <li class="nav-item mx-2" >
-                  <a class="nav-link " href="./quiz.html">Path Finder</a>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="./quiz.html">Path Finder</a>
                 </li>
                 <li class="nav-item mx-2">
-                  <a class="nav-link active" aria-current="page" href="./blog.html">Blog</a>
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="./blog.html"
+                    >Blog</a
+                  >
                 </li>
                 <li class="nav-item mx-2">
                   <a class="nav-link" href="#">About</a>
                 </li>
               </ul>
-              <div class="d-flex">
-                <button class="btn btn-primary login-btn">
-                  Login / Register
-                </button>
+              <div class="login-btn">
+                <a class="go-btn"
+                  ><span class="btn-text"> Login / Register</span>
+                </a>
               </div>
             </div>
           </div>
@@ -127,15 +129,13 @@
       <img src="./imgs/graphic2.png" alt="" />
       <div class="parent">
         <strong>Educational Background </strong>
-        
       </div>
     </div>
     <div class="title">
-        <img src="./imgs/graphic_homepage.png" alt="" />
-        <div class="parent">
-          <strong>Awards </strong>
-         
-        </div>
+      <img src="./imgs/graphic_homepage.png" alt="" />
+      <div class="parent">
+        <strong>Awards </strong>
       </div>
+    </div>
   </body>
 </html>
