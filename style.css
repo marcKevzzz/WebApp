@@ -24,7 +24,7 @@ body {
   margin-top: 10px;
   border-radius: 15px;
   margin-inline: auto;
-  top: 10px;
+  top: 1.5em;
   z-index: 99999;
 }
 
@@ -97,7 +97,6 @@ body {
 }
 
 .main {
-  padding-inline: 3vw;
   gap: 0;
 }
 
@@ -109,20 +108,20 @@ body {
   width: 100%;
   flex-wrap: wrap-reverse;
   padding-inline: 5dvw;
+  padding-bottom: 7vh;
   height: 90dvh;
-  margin-bottom: 5em;
+  margin-bottom: 2em;
+  align-items: center;
 }
 
 .hero {
   object-fit: contain;
   min-width: 300px;
   max-width: 38vw;
-  margin-right: 2dvw;
   margin-top: 5dvh;
   background-position: center;
   transition: all ease 0.2s;
   height: 400px;
-  align-self: self-start;
 }
 
 .hero:hover {
@@ -234,7 +233,6 @@ body {
   padding-inline: 2.5vw;
   background: #f1f5fd;
   padding-block: 7vh;
-  margin-bottom: 10vh;
   align-items: center;
 }
 
@@ -250,13 +248,13 @@ body {
 }
 
 .s2 {
-  flex: 1 1 40vw;
+  flex: 1 1 670px;
   min-height: 50vh;
 }
 
 .teenimg {
   flex: 1 1 30vw;
-  min-width: 20em;
+  min-width: 18em;
   margin-inline: auto;
   object-fit: contain;
   object-position: top;
@@ -267,15 +265,17 @@ body {
 /* Section 3 of homepage */
 #section3 {
   margin-bottom: 8em;
+  padding-top: .8em;
 }
 
 #section3 .banner-list {
   display: flex;
 
   flex-wrap: wrap;
-  min-height: 60vh;
+  min-height: fit-content;
   justify-content: center;
   margin-bottom: 2em;
+  
 }
 .t3 {
   font-size: 50px;
@@ -371,14 +371,19 @@ body {
 .quotes {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3em;
+  margin-top: 5em;
 }
 
-.quotes h1 {
+.quotes .bannerAnim {
+  max-width: 400px;
+  min-width: 250px;
+  flex: 1 1 280px;
   font-size: 30px;
   font-weight: 600;
   text-align: center;
-  min-width: 30vw;
   animation: bannerAnim 0.5s ease backwards;
   animation-delay: calc(0.1s * var(--i));
 }
@@ -391,6 +396,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .footer-logo {
@@ -401,7 +407,12 @@ body {
 .footer-title {
   font-size: 30px;
   font-weight: 600;
-  margin-bottom: 0;
+  margin-bottom: .8em;
+  line-height: 1em;
+}
+
+.footer p{
+  line-height: .95em;
 }
 
 .footer ul {
@@ -434,18 +445,16 @@ body {
 }
 
 /* For quiz page */
-.contain {
-  padding: 1.8rem;
-}
 .main1 {
   font-family: Arial, sans-serif;
   display: flex;
+  max-width: 97vw;
   min-height: 85dvh;
   max-height: 100dvh;
-  min-width: 97vw;
   margin-inline: auto;
-  gap: 1.5vw;
+  gap: 1.5em;
   flex-wrap: wrap;
+  margin-top: 2em;
 }
 
 .quiz-container {
@@ -457,9 +466,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  flex-grow: 1;
+  flex: 2 1 600px;
   padding: 2% 3% 0;
   transition: opacity 0.3s ease;
+  
 }
 
 .title1 {
@@ -517,7 +527,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  flex-grow: 1;
+  flex: 1 2 30vw;
   padding: 2% 5% 0;
 }
 
@@ -605,6 +615,8 @@ body {
     font-size: 15px;
     max-width: 100%;
     margin-inline: 5vw;
+    display: flex;
+    justify-content : center;
   }
 
   .teenimg {
@@ -613,11 +625,15 @@ body {
   .banner .banner-cont {
     font-size: 16px;
   }
+
+  .quotes .bannerAnim{
+    font-size: 22px;
+  }
 }
 
 /* Screen for small phone */
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 430px) {
   .navbar-brand {
     font-size: 18px;
     margin-left: 15px;
@@ -673,6 +689,7 @@ body {
   .homepage .go-btn {
     padding: 6px 15px;
     font-size: 13px;
+    
   }
 
   .parag2 {
@@ -682,6 +699,7 @@ body {
   #s3 {
     margin-top: 0;
   }
+
 }
 
 @media screen and (min-width: 370px) and (max-width: 380px) {
