@@ -126,7 +126,12 @@ document.addEventListener("DOMContentLoaded", () => {
     
         function showResults() {
             const resultPercentages = calculateStrandPercentages();
-            const quizContainer = document.getElementById('quiz');
+            var quizContainer = document.getElementsByClassName('quiz')[0];  // Access the first element in the collection
+            if (quizContainer) {
+                quizContainer.innerHTML = 'Some content';  // Replace content
+            } else {
+                console.error('Element not found!');
+            }
             
             // Style the result display with Bootstrap
             quizContainer.innerHTML = `
@@ -151,6 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
             document.getElementById('back-btn').style.display = 'block';
         }
+        
     
         function calculateStrandPercentages() {
             const strandCount = {
